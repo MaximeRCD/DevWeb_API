@@ -6,7 +6,6 @@ aiomysql==0.1.1
 pydantic==1.10.2
 SQLAlchemy==1.4.41
 pandas==1.5.2
-
 opencv-python==4.6.0.66
 keras==2.11.0
 scikit-learn==1.1.3
