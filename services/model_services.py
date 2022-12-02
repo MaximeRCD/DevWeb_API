@@ -5,7 +5,8 @@ from keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 
-#model = load_model('/home/issa/Documents/DE3/DEV/web/DevWeb_API/MlModel/model_5class_resnet_87%.h5')
+path =""
+model = load_model(path)
 labels = ['G&M', 'Organic', 'Other', 'Paper', 'Plastic']
 le = LabelEncoder()
 labels = le.fit_transform(labels)
