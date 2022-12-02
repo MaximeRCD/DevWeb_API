@@ -3,6 +3,7 @@ from database import database
 from routers import users, scans
 app = FastAPI()
 app.include_router(users.user_router)
+app.include_router(model.model_router)
 app.include_router(scans.scan_router)
 
 @app.on_event("startup")
