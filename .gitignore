@@ -134,3 +134,6 @@ dmypy.json
 
 #ide
 .idea
+
+# dossier image de test
+img/
