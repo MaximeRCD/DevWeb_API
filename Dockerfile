@@ -5,6 +5,9 @@ FROM python:3.9
 WORKDIR /web_api
 
 #
+ENV env=PROD
+
+#
 COPY ./requirements.txt /web_api/requirements.txt
 
 RUN apt-get update

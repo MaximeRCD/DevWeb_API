@@ -1,19 +1,8 @@
-from database import database, metadata
-import sqlalchemy
+from database import database, scans
 import pandas as pd
 
+
 SCAN_CLASSES = ["GlassOrMetal", "Other", "Organic", "Plastic", "Paper"]
-
-
-scans = sqlalchemy.Table(
-    "scans",
-    metadata,
-    sqlalchemy.Column("user_id", sqlalchemy.Integer),
-    sqlalchemy.Column("predicted_class", sqlalchemy.String(length=15)),
-    sqlalchemy.Column("date", sqlalchemy.TIMESTAMP),
-    sqlalchemy.Column("score", sqlalchemy.Float),
-
-)
 
 
 def get_all_scans():
