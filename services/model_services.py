@@ -4,8 +4,12 @@ import cv2
 from keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
+from dotenv import load_dotenv
+import os
 
-path =""
+load_dotenv()
+path = os.getenv("MODEL_PATH")
+
 model = load_model(path)
 labels = ['G&M', 'Organic', 'Other', 'Paper', 'Plastic']
 le = LabelEncoder()
