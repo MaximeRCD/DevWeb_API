@@ -13,4 +13,8 @@ numpy==1.23.2
 databases==0.6.2
 cryptography
 tensorflow
+<<<<<<< HEAD
 databases==0.6.2
+=======
+python-dotenv==0.20.0
+>>>>>>> a1b561b600ce6d2566353d49039abf14c0a61d50
