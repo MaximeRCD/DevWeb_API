@@ -1,16 +1,5 @@
 import ssl
-import sqlalchemy
-from database import database, metadata
-
-users = sqlalchemy.Table(
-    "users",
-    metadata,
-    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
-    sqlalchemy.Column("pseudo", sqlalchemy.String(length=30)),
-    sqlalchemy.Column("email", sqlalchemy.String(length=100)),
-    sqlalchemy.Column("password", sqlalchemy.String(length=20)),
-    sqlalchemy.Column("last_updated", sqlalchemy.TIMESTAMP)
-)
+from database import database, users
 
 
 def get_all_users():
