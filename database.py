@@ -1,8 +1,15 @@
 import databases
 import sqlalchemy
+from dotenv import load_dotenv
+import os
 
-# SQLAlchemy specific code, as with any other app
-DATABASE_URL = "mysql+pymysql://root:root@localhost:3306/garbage_app_db"
+load_dotenv()
+
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@localhost:3306/{DB_NAME}"
 
 database = databases.Database(DATABASE_URL)
 metadata = sqlalchemy.MetaData()
