@@ -1,21 +1,22 @@
 version : '3'
-networks:
-        db_net:
-                driver: bridge
-                ipam:
-                        config:
-                                - subnet: 192.168.2.0/24
 services:
+        db:
+           image : mysql
+           volumes:
+                   - ../mysql:/var/lib/mysql
+           ports:
+                   - "3306:3306"
+           environment:
+                   - MYSQL_ROOT_PASSWORD=custom
         api:
-            image: dev_web_apiv_0
-            networks:
-                db_net:
-                        ipv4_address: 192.168.2.11
+            image: api
             volumes :
                     - ./:/web_api
-            command: uvicorn main:app --host 192.168.2.11 --port 8000
             ports:
                     - "8000:8000"
+            restart: always
+
+
 
         
 
