@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 import datetime
@@ -24,7 +26,7 @@ class User(BaseModel):
     last_updated: datetime.datetime
 
 
-@user_router.get("/", tags=["users"], response_model=list[User])
+@user_router.get("/", tags=["users"], response_model=List[User])
 async def get_users():
     return await users_services.get_all_users()
 

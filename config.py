@@ -7,10 +7,11 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_NAME = os.getenv("DB_NAME")
 MODEL_PATH = os.getenv("MODEL_PATH")
+env = os.getenv('env')
 
-if not os.environ['env']:
-    raise Exception('need to set env')
+# if not os.environ['env']:
+#     raise Exception('need to set env')
 
-env = os.environ['env']
 
-API_IP = os.getenv(env+"_API_IP")
+
+API_IP = os.getenv('PROD_API_IP')

@@ -24,4 +24,3 @@ async def get_pcs_scans_stats(user_id: int = None):
     classes_cardinality = all_scans_df.groupby(["predicted_class"]).size().to_dict()
     return classes_cardinality
 
-
