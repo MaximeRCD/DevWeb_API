@@ -1,3 +1,4 @@
+from typing import List
 from binascii import a2b_base64
 from fastapi import APIRouter, Form
 from services import scans_services
@@ -24,7 +25,7 @@ class Scan(BaseModel):
     score: float
 
 
-@scan_router.get("/", tags=["scans"], response_model=list[Scan])
+@scan_router.get("/", tags=["scans"], response_model=List[Scan])
 async def get_user_scans(user_id: int = None):
     if user_id:
         return await scans_services.get_scans_by_user_id(user_id)
