@@ -6,6 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 import numpy as np
 from config import MODEL_PATH
 
+IMAGEDIR="./img/"
+
 model = load_model(MODEL_PATH)
 labels = ['G&M', 'Organic', 'Other', 'Paper', 'Plastic']
 le = LabelEncoder()
