@@ -9,6 +9,6 @@ model_router = APIRouter(
 
 @model_router.get("/", tags=['model'])
 async def prediction(imageUrl: str):
-    predict_class = model_services.predict(imageUrl)
-    return {"image" : f"{imageUrl}", "class": f"{predict_class}"}
+    predict_class,score = model_services.predict(imageUrl)
+    return {"image" : f"{imageUrl}", "class": f"{predict_class}", "score": f"{score}"}
 

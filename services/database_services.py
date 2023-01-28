@@ -5,4 +5,10 @@ async def save_prediction(predicition):
         predicted_class=predicition.predicted_class,
         score=predicition.score
     )
-    await database.execute(query)
+    try:
+        insertion = await database.execute(query)
+        return {"Result added"}
+
+    except Exception as e:
+        print(e)
+        return {e}

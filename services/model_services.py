@@ -25,4 +25,5 @@ def predict(img):
     img1 = pre(img)
     p = model.predict(img1)
     predicted_class = le.classes_[np.argmax(p[0], axis=-1)]
-    return predicted_class
+    score = p.max()
+    return predicted_class,score

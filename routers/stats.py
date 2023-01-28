@@ -12,6 +12,6 @@ class Prediction(BaseModel):
     user_id : int
     predicted_class : str
     score : float
-@stats_router.get("/", tags=['stats'],response_model=Prediction)
+@stats_router.put("/", tags=['stats'])
 async def prediction(prediction: Prediction):
     return await database_services.save_prediction(prediction)
