@@ -18,7 +18,7 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column("pseudo", sqlalchemy.String(length=30)),
     sqlalchemy.Column("email", sqlalchemy.String(length=100)),
-    sqlalchemy.Column("password", sqlalchemy.String(length=20)),
+    sqlalchemy.Column("password", sqlalchemy.String(length=35)),
     sqlalchemy.Column("last_updated", sqlalchemy.TIMESTAMP)
 )
 
