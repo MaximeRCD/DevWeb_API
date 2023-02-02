@@ -21,6 +21,7 @@ L'objectif de ce projet est de construire une API autonome qui permet de :
   DB_NAME=garbage_app_db
   MODEL_PATH=./img/model_5class_resnet_87%.h5
   LOCAL_API_IP=localhost
+  DEV_API_IP=db
   PROD_API_IP=db
   ```
   
@@ -36,7 +37,7 @@ L'objectif de ce projet est de construire une API autonome qui permet de :
 
 - Build l'image Docker à partir du fichier Dockerfile
 ```
-docker build -t api .
+docker build -t api -f dev.Dockerfile .
 ```
 
 - Démarrer le Docker Compose fourni
