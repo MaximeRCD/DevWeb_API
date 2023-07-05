@@ -13,7 +13,7 @@ services:
             volumes :
                     - ./:/web_api
             ports:
-                    - "8000:8000"
+                    - "7999:7999"
             restart: always
 
 
